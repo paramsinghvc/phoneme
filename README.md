@@ -1,6 +1,7 @@
 # Phoeneme
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
+An Angular 2 Application using the Musixmatch Api for searching the tracks, discovering trending tracks, finding tracks lyrics.
+Using ng2-redux, ImmutableJS, Sass, RxJS.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
