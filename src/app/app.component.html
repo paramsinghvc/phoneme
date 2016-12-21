@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
+<div>
+    <h1>
+  {{title}} - {{charts.pluck('isLoading') | async}}
 </h1>
+    <p> {{charts.pluck('test') | async | json}}</p>
+    <app-charts></app-charts>
+</div>
