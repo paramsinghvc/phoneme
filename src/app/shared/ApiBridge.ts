@@ -1,7 +1,8 @@
 import Config from './config';
 import { Injectable } from '@angular/core';
-import { Http, Jsonp } from '@angular/http';
+import { Http, Jsonp, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { ChartTrack } from '../models/ChartTrack';
 
 @Injectable()
 export default class ApiBridge {
@@ -19,10 +20,16 @@ export default class ApiBridge {
 
 	prepareCall(method = 'get', url, params) {
 		var x = this.constructUri(url, params);
-		return this.jsonp[method].call(this.jsonp, x).map(res => res.json());
+		return this.jsonp[method].call(this.jsonp, x)
 	}
 
 	fetchTrendingCharts(): Observable<any> {
-		return this.prepareCall('get', 'chart.tracks.get', [`page=1`, `page_size=5`, `country=it`, `f_has_lyrics=1`]);
+		return this.prepareCall('get', 'chart.tracks.get', [`page=1`, `page_size=5`, `f_has_lyrics=1`])
+			.map((res: Response) => {
+				return (<any>res.json()).message.body.track_list.map(track => {
+					console.log(track);
+					return new ChartTrack(track.track);
+				})
+			})
 	}
 }

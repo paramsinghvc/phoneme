@@ -1,3 +1,8 @@
-<p>
-  charts works!
-</p>
+<div class="charts">
+    <h1>Top Charts</h1>
+    <ul>
+        <li *ngFor="let track of (charts | async)?.get('tracks'); let i = index; ">
+            <app-track [track]="track"></app-track>
+        </li>
+    </ul>
+</div>

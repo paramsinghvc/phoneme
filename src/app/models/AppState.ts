@@ -12,7 +12,7 @@ interface Search {
 
 export interface AppState<K,V> extends Map<K,V> {
 	isLoading: boolean;
-	charts: Array<any>;
+	// charts: Array<any>;
 	toast: Toast;
-	search: Search;
+	// search: Search;
 }

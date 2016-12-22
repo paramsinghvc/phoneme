@@ -1,0 +1,17 @@
+.track-item {
+	padding: 10px 10px;
+	box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;			
+	display: flex;
+	.info{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-left: 20px;
+		>p{
+			margin-bottom: 10px;
+		}		
+	}
+}

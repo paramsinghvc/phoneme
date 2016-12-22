@@ -8,3 +8,5 @@ export interface Reducer<T> {
 }
 
 export { AppState } from './AppState';
+export { ChartTrack } from './ChartTrack';
+export { Track } from './Track';
